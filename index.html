@@ -1,131 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redireccionando...</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <title>Regalo Exclusivo con Guía Visual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 30px;
+      color: #333;
+      text-align: center;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 18px;
+      text-align: center;
+      color: #444;
+    }
+    .boton {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 35px;
+      font-size: 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .visual-help {
+      margin-top: 40px;
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    .visual-help h2 {
+      color: #856404;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .step {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .step img {
+      width: 90%;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+    }
+    .step::after {
+      content: "➤";
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+    .step:nth-child(3)::after {
+      top: 30%;
+      right: 20px;
+    }
+    .step p {
+      font-size: 17px;
+      color: #444;
+      margin-top: 8px;
+    }
 
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 360px;
-        }
-
-        h1 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        p {
-            font-size: 16px;
-            color: #555;
-            margin: 0 0 20px;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #eee;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .button-container {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .button {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #217dbb;
-        }
-
-        .message {
-            margin-top: 12px;
-            font-size: 14px;
-            color: #444;
-        }
-    </style>
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
 </head>
-
 <body>
-    <main class="container">
-        <h1>Espere...</h1>
-        <p>Estamos buscando las mejores oportunidades para ti...</p>
-        <div class="loader"></div>
-        <div class="button-container" id="buttonContainer">
-            <button class="button" onclick="redirigir()">Abrir en Chrome</button>
-            <p class="message">Si la página no se abre automáticamente, haz clic aquí.</p>
-        </div>
-    </main>
 
-    <script>
-        (function () {
-            const destino = "https://tutrabajonuevo.com/";
-            const userAgent = navigator.userAgent.toLowerCase();
+  <h1>🎁 ¡Tu regalo exclusivo está listo!</h1>
 
-            function redirigir() {
-                const isAndroid = userAgent.includes("android");
-                if (isAndroid) {
-                    const intentUrl = `intent://${destino.replace(/^https?:\/\//, "")}#Intent;scheme=https;package=com.android.chrome;end`;
-                    window.location.href = intentUrl;
-                }
-                setTimeout(() => {
-                    window.location.href = destino;
-                }, 500);
-            }
+  <p>Haz clic en el botón para continuar:</p>
 
-            // Redirección automática
-            setTimeout(redirigir, 1000);
+  <a class="boton" href="https://digital.teampelucaxd.com/?utm_source=Jaden&utm_medium=Jaden&utm_campaign=Jaden" target="_blank" rel="noopener noreferrer">Abrir ahora</a>
 
-            // Mostrar botón si no se redirige automáticamente
-            setTimeout(() => {
-                document.getElementById("buttonContainer").style.display = "block";
-            }, 3000);
-        })();
-    </script>
+  <div class="visual-help">
+    <h2>¿No se abre desde TikTok? Mira esto 👇</h2>
+
+    <div class="step">
+      <img src="https://i.imgur.com/BmFteAW.jpeg" alt="Paso 1">
+      <p>1. Toca los <strong>3 puntos</strong> arriba a la derecha</p>
+    </div>
+
+    <div class="step">
+      <img src="https://i.imgur.com/gztDxPk.jpeg" alt="Paso 2">
+      <p>2. Selecciona <strong>“Abrir en el navegador”</strong></p>
+    </div>
+
+    <div class="step">
+      <img src="https://i.imgur.com/xVPdpnH.jpeg" alt="Paso 3">
+      <p>3. Dale click <strong>al botón verde</strong> y listo</p>
+    </div>
+  </div>
+
 </body>
-
 </html>
